@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krukov Tek IPTV professionnel</title>
+  <meta name="description" content="Service IPTV professionnel Krukov Tek Antsirabe. Accédez à une playlist M3U unique et à une installation simple pour Android, TV, PC.">
+  <link rel="canonical" href="https://krukov-tek.web.app/">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Krukov Tek — IPTV professionnel" />
+  <meta property="og:description" content="Accédez à une IPTV stable et professionnelle avec Krukov Tek. Playlist M3U, support local à Antsirabe, installation simple." />
+  <meta property="og:image" content="https://krukov-tek.web.app/og-image.png" />
+  <meta property="og:url" content="https://krukov-tek.web.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@krukov_tek" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Krukov Tek",
+    "url": "https://krukov-tek.web.app/",
+    "logo": "https://krukov-tek.web.app/logo.png",
+    "sameAs": ["https://www.facebook.com/","https://wa.me/"],
+    "description": "Service IPTV professionnel et assistance locale à Antsirabe."
+  }
+  </script>
+  <style>
+    :root {
+      /* Modern light palette */
+      color-scheme: light;
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --surface-2: #f6f9ff;
+      --surface-soft: #f1f6ff;
+      --border: rgba(15,23,42,0.06);
+      --text: #0b1220;
+      --muted: #596779;
+      --accent: #1e40af; /* deeper blue */
+      --accent-2: #2563eb;
+      --accent-soft: rgba(37,99,235,0.10);
+      --success: #10b981;
+      --glass: rgba(15,23,42,0.04);
+      --shadow: 0 8px 30px rgba(11,18,32,0.06);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1140px, 100%); margin: 0 auto; padding: 0 1.2rem; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 6px 20px rgba(11,18,32,0.03);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 72px;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    nav a {
+      font-size: 0.95rem;
+      color: var(--muted);
+      transition: color .15s, transform .12s;
+      padding: 0.45rem 0.6rem;
+      border-radius: 8px;
+    }
+    nav a:hover { color: var(--accent); transform: translateY(-2px); }
+    .hero {
+      min-height: 80vh;
+      display: grid;
+      place-items: center;
+      padding: 3.4rem 0 2.6rem;
+      background: linear-gradient(180deg, rgba(37,99,235,0.04), transparent 45%);
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.4rem;
+      align-items: center;
+    }
+    .hero-copy {
+      max-width: 34rem;
+    }
+    .label-pill {
+      display: inline-flex;
+      gap: 0.5rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.02;
+      margin: 0 0 .45rem 0;
+      letter-spacing: -0.02em;
+    }
+    .hero-title span { color: var(--accent-2); }
+    .hero-text {
+      margin: 1rem 0 1.6rem 0;
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 54ch;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 1.4rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      cursor: pointer;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary {
+      background: linear-gradient(90deg,var(--accent),var(--accent-2));
+      color: #fff;
+      box-shadow: 0 8px 26px rgba(37,99,235,0.14);
+      border-color: transparent;
+    }
+    .button-secondary {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .hero-panel {
+      padding: 1.4rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, var(--surface), var(--surface-2));
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 0.9rem;
+    }
+    .hero-panel h3 {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+    .hero-panel p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .stat-card {
+      padding: 1rem 1.1rem;
+      border-radius: 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: .35rem;
+    }
+    .stat-label { color: var(--muted); font-size: 0.95rem; }
+    .section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      margin-bottom: 1rem;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      max-width: 12ch;
+    }
+    .section-text {
+      margin-bottom: 2rem;
+      max-width: 46rem;
+      color: var(--muted);
+    }
+    .feature-grid,
+    .category-grid,
+    .method-list,
+    .contact-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .feature-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    /* Catalog-specific panel */
+    .catalog-panel {
+      background: linear-gradient(180deg, rgba(37,99,235,0.03), transparent 30%);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 2.2rem 1.6rem;
+      margin: 0.6rem 0 0 0;
+    }
+    .category-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .category-card { display: flex; gap: 1rem; align-items: center; }
+    .category-card .cat-icon {
+      width: 56px; height: 56px; border-radius: 12px; flex: 0 0 56px;
+      display: grid; place-items: center; font-weight:800; color:#fff;
+      background: linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow: 0 8px 22px rgba(37,99,235,0.12);
+    }
+    .category-card h3 { margin: 0; font-size: 1rem; }
+    .category-card p { margin: 0; color: var(--muted); font-size: 0.95rem }
+    .feature-card,
+    .category-card,
+    .method-card,
+    .contact-card {
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg,var(--surface-2),#fff);
+      padding: 1.4rem;
+      transition: transform .14s ease, box-shadow .14s ease;
+    }
+    .feature-card:hover,
+    .method-card:hover,
+    .category-card:hover,
+    .contact-card:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(11,18,32,0.06); }
+    .feature-card h3,
+    .category-card h3,
+    .method-card h3,
+    .contact-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.9rem;
+      font-size: 1.05rem;
+    }
+    .feature-card p,
+    .category-card p,
+    .method-card p,
+    .contact-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.75;
+    }
+    .method-item {
+      display: grid;
+      gap: 1rem;
+    }
+    .method-title {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: .75rem;
+    }
+    .steps { display: grid; gap: .85rem; }
+    .step-block {
+      display: grid;
+      gap: .6rem;
+      padding: 0.9rem 1rem;
+      border-radius: 10px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+    }
+    .step-block strong { color: var(--text); }
+    .step-block span {
+      display: inline-flex;
+      min-width: 28px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(43,118,255,0.16);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .playlist-panel {
+      display: grid;
+      gap: 1rem;
+      padding: 1.2rem;
+      border-radius: 12px;
+      background: linear-gradient(180deg,var(--surface-2),#fff);
+      border: 1px solid var(--border);
+    }
+    .playlist-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+    }
+    .playlist-input {
+      width: 100%;
+      min-height: 52px;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, monospace;
+      font-size: 0.95rem;
+    }
+    .copy-button {
+      min-height: 48px;
+      padding: 0 1rem;
+      border-radius: 10px;
+      background: linear-gradient(90deg,var(--accent),var(--accent-2));
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform .12s ease, box-shadow .12s ease;
+      box-shadow: 0 8px 24px rgba(37,99,235,0.12);
+    }
+    .copy-button:hover{transform:translateY(-2px)}
+    .copy-button:hover { opacity: .92; }
+    .contact-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .share-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+    .share-card {
+      border-radius: 12px;
+      padding: 1rem;
+      background: linear-gradient(180deg,var(--surface-2),#fff);
+      border: 1px solid var(--border);
+      text-align: center;
+      font-weight: 700;
+      transition: transform .12s, border-color .12s;
+    }
+
+    /* Decorative hero background */
+    .hero-decor{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;border-radius:0}
+    .hero-decor svg{width:140%;height:100%;transform:translateX(-10%);filter:blur(22px);opacity:.85}
+    .blob{transition:transform 12s ease-in-out;will-change:transform}
+    @keyframes float1{0%{transform:translateY(0) translateX(0) scale(1)}50%{transform:translateY(-18px) translateX(6%) scale(1.06)}100%{transform:translateY(0) translateX(0) scale(1)}}
+    @keyframes float2{0%{transform:translateY(0) translateX(0) scale(1)}50%{transform:translateY(12px) translateX(-6%) scale(.98)}100%{transform:translateY(0) translateX(0) scale(1)}}
+    .blob.a{animation:float1 14s ease-in-out infinite}
+    .blob.b{animation:float2 18s ease-in-out infinite}
+    /* ensure content sits above decor */
+    .hero .hero-grid, .hero .hero-panel, .hero-copy {position:relative;z-index:2}
+
+    /* Testimonials */
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:1rem}
+    .testimonial-card{padding:1.2rem;border-radius:12px;border:1px solid var(--border);background:linear-gradient(180deg,#fff,var(--surface-2));box-shadow:0 8px 24px rgba(11,18,32,0.04)}
+    .testimonial-author{font-weight:800;color:var(--accent-2);margin-top:.6rem}
+    .testimonial-text{color:var(--muted);margin:0.4rem 0}
+
+    /* Sticky viral CTA */
+    #stickyCTA{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:.6rem .9rem;border-radius:999px;box-shadow:0 12px 40px rgba(37,99,235,0.18);display:flex;gap:.6rem;align-items:center;z-index:60}
+    #stickyCTA button{background:transparent;border:none;color:#fff;font-weight:700;padding:.5rem .7rem;border-radius:999px;cursor:pointer}
+    #stickyCTA .count{background:rgba(255,255,255,0.12);padding:.25rem .5rem;border-radius:999px;font-weight:800}
+    .share-card:hover { transform: translateY(-3px); border-color: rgba(43,118,255,0.30); }
+    footer {
+      padding: 3rem 0 2rem;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    footer p { margin: .6rem 0; }
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .feature-grid, .category-grid, .contact-grid { grid-template-columns: repeat(2, minmax(200px, 1fr)); }
+      .hero-title { font-size: clamp(1.9rem, 5.6vw, 2.6rem); }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      #navToggle { display: inline-block; }
+      .site-nav { flex-direction: column; align-items: flex-start; padding: 0.6rem 0; width: 100%; }
+      .site-nav a { padding: 0.6rem 0; width: 100%; }
+      .hero { padding-top: 3.2rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .feature-grid, .category-grid, .contact-grid, .method-list { grid-template-columns: 1fr; }
+      .playlist-row { grid-template-columns: 1fr; align-items: stretch; }
+      .button { width: 100%; }
+      .button + .button { margin-top: 0.6rem; }
+      .copy-button { width: 100%; }
+      .hero-panel { order: 2; }
+      .hero-copy { order: 1; }
+      .label-pill { padding: 0.35rem 0.7rem; }
+    }
+
+    @media (max-width: 480px) {
+      :root { --radius-sm: 6px; --radius-md: 10px; }
+      body { font-size: 15px; }
+      .container { padding: 0 0.9rem; }
+      .hero-title { font-size: 1.6rem; }
+      .hero-text { font-size: 0.95rem; }
+      .playlist-input { font-size: 0.9rem; }
+      .cat-icon { width: 48px; height: 48px; flex: 0 0 48px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-inner">
+      <a class="brand">KRUKOV TEK</a>
+      <button id="navToggle" aria-expanded="false" aria-controls="siteNav" style="background:transparent;border:none;color:var(--muted);font-weight:700;display:none;">Menu</button>
+      <nav id="siteNav" class="site-nav">
+        <a href="#services">Services</a>
+        <a href="#catalog">Catalogue</a>
+        <a href="#installer">Installation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-decor" aria-hidden="true">
+        <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0%" stop-color="#2563eb" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#1e40af" stop-opacity="0.75"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" x2="1">
+              <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#2563eb" stop-opacity="0.45"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(0,0)">
+            <ellipse class="blob a" cx="220" cy="320" rx="360" ry="180" fill="url(#g1)" />
+            <ellipse class="blob b" cx="920" cy="180" rx="260" ry="140" fill="url(#g2)" />
+          </g>
+        </svg>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="label-pill">IPTV professionnel</div>
+          <h1 class="hero-title">Accédez à une IPTV stable et professionnelle avec Krukov Tek</h1>
+          <p class="hero-text">Une solution complète pour diffuser la télévision mondiale sur Android, TV, PC et applications IPTV, avec une playlist M3U unique et un support local à Antsirabe.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#installer">Commencer maintenant</a>
+            <a class="button button-secondary" href="#contact">Nous contacter</a>
+          </div>
+          <div class="hero-panel">
+            <h3>Résumé du service</h3>
+            <p>Playlist prête à l'emploi, installation rapide et suivi local pour garantir un accès IPTV fiable et professionnel.</p>
+            <div class="stats-grid">
+              <div class="stat-card"><div class="stat-number" data-target="8000">0</div><div class="stat-label">Chaînes</div></div>
+              <div class="stat-card"><div class="stat-number" data-target="150">0</div><div class="stat-label">Pays</div></div>
+              <div class="stat-card"><div class="stat-number" data-target="100">0</div><div class="stat-label">Sans abonnement</div></div>
+              <div class="stat-card"><div class="stat-number" data-target="24">0</div><div class="stat-label">Support local</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <h3>Playlist IPTV</h3>
+          <p>Copiez le lien et collez-le directement dans votre application IPTV compatible pour démarrer en quelques secondes.</p>
+          <div class="playlist-panel">
+            <div class="playlist-row">
+              <input id="playlistLink" class="playlist-input" readonly value="https://tsinjo-engineering.github.io/mon-iptv-markov/ma_liste_complete.m3u">
+              <button id="copyButton" class="copy-button">Copier</button>
+            </div>
+            <p style="margin:0;color:var(--muted);">Lien compatible Smarters Pro, TiviMate, SS IPTV, VLC et autres lecteurs IPTV.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <div class="section-title">Services livrés</div>
+      <p class="section-text">Krukov Tek propose une couverture IPTV professionnelle avec assistance locale, configuration réseau et formation utilisateur pour garantir une installation fluide et durable.</p>
+      <div class="feature-grid" id="servicesGrid"></div>
+    </section>
+
+    <section id="testimonials" class="section container" style="padding-top:2rem;padding-bottom:2rem;">
+      <div class="section-title">Témoignages</div>
+      <p class="section-text">Ce que disent nos clients — retours réels sur la stabilité et l'installation locale.</p>
+      <div class="testimonials-grid" id="testimonialsGrid">
+        <!-- testimonials populated by JS -->
+      </div>
+    </section>
+
+    <section id="catalog" class="section container catalog-panel">
+      <div class="section-title">Catalogue de chaînes</div>
+      <p class="section-text">Retrouvez toutes les catégories prises en charge par la playlist : actualités, sport, divertissement, jeunesse, musique et programme local de Madagascar.</p>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section id="installer" class="section container">
+      <div class="section-title">Installation rapide</div>
+      <p class="section-text">Suivez les instructions simples pour ajouter la playlist IPTV sur votre appareil. Nous couvrons Android, TV, Smart TV et ordinateur.</p>
+      <div class="method-list" id="methodGrid"></div>
+    </section>
+
+    <section id="contact" class="section container" style="background: rgba(255,255,255,0.02); border-radius: 32px; border: 1px solid rgba(255,255,255,0.08); padding: 3rem 2rem;">
+      <div class="section-title">Contact et assistance</div>
+      <p class="section-text">Contactez Krukov Tek pour une installation sur place à Antsirabe, un support dédié ou une configuration sur mesure.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Adresse</h3>
+          <p>Antsirabe 110, Madagascar</p>
+        </div>
+        <div class="contact-card">
+          <h3>Téléphone</h3>
+          <p><a href="tel:0335184875">033 51 848 75</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Site web</h3>
+          <p><a href="https://krukov-tek.web.app/" target="_blank">krukov-tek.web.app</a></p>
+        </div>
+      </div>
+      <div class="share-grid" style="margin-top:2rem;">
+        <a class="share-card" href="https://wa.me/?text=Acc%C3%A9dez%20%C3%A0%20IPTV%20professionnel%20Krukov%20Tek%20Antsirabe%20-%20https%3A%2F%2Ftsinjo-engineering.github.io%2Fmon-iptv-markov%2F" target="_blank">Partager sur WhatsApp</a>
+        <a class="share-card" href="https://www.facebook.com/sharer/sharer.php?u=https://tsinjo-engineering.github.io/mon-iptv-markov/" target="_blank">Partager sur Facebook</a>
+        <a class="share-card" href="https://t.me/share/url?url=https://tsinjo-engineering.github.io/mon-iptv-markov/&text=IPTV%20professionnel%20Krukov%20Tek" target="_blank">Partager sur Telegram</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>KRUKOV TEK — Service IPTV professionnel, compatible GitHub Pages.</p>
+      <p>&copy; <span id="currentYear"></span> Krukov Tek Antsirabe</p>
+    </div>
+  </footer>
+
+  <script>
+    const services = [
+      { title: 'Playlist M3U unique', description: 'Un lien centralisé pour toutes les chaînes, facile à copier et à utiliser.' },
+      { title: 'Support local à Antsirabe', description: 'Assistance sur place pour la configuration et l’optimisation du service.' },
+      { title: 'Configuration expert', description: 'Installation sur téléphone, box Android, Smart TV et PC sans complexité.' },
+      { title: 'Fiabilité renforcée', description: 'Playlist maintenue et mise à jour régulièrement pour un accès permanent.' }
+    ];
+
+    const categories = [
+      { title: 'Actualités', description: 'Chaînes internationales et locales pour rester informé.' },
+      { title: 'Sport', description: 'Accès aux événements sportifs et aux retransmissions en direct.' },
+      { title: 'Films & séries', description: 'Programmation variée pour tous les âges.' },
+      { title: 'Musique', description: 'Stations musicales et divertissement audio.' },
+      { title: 'Jeunesse', description: 'Programmes dédiés aux enfants et aux adolescents.' },
+      { title: 'Madagascar & Afrique', description: 'Contenus locaux pour les auditeurs de la région.' }
+    ];
+
+    const methods = [
+      {
+        title: 'Android mobile',
+        device: 'IPTV Smarters Pro',
+        steps: [
+          'Téléchargez IPTV Smarters Pro sur le Play Store.',
+          'Ouvrez l’application et créez un nouvel utilisateur.',
+          'Choisissez « Charger une playlist M3U ».',
+          'Collez le lien et confirmez.',
+          'La playlist se charge et les chaînes sont accessibles.'
+        ]
+      },
+      {
+        title: 'Box Android / TV',
+        device: 'TiviMate',
+        steps: [
+          'Installez TiviMate depuis le Play Store.',
+          'Ajoutez une nouvelle playlist dans le menu.',
+          'Sélectionnez « URL M3U ».',
+          'Collez le lien et validez.',
+          'La TV est prête à l’usage.'
+        ]
+      },
+      {
+        title: 'Smart TV',
+        device: 'SS IPTV',
+        steps: [
+          'Installez SS IPTV sur votre téléviseur.',
+          'Accédez aux paramètres de playlist.',
+          'Choisissez « Remote playlist ».',
+          'Collez le lien M3U.',
+          'Synchronisez la playlist et démarrez la lecture.'
+        ]
+      },
+      {
+        title: 'Ordinateur',
+        device: 'VLC Media Player',
+        steps: [
+          'Téléchargez VLC depuis videolan.org.',
+          'Ouvrez le menu Media et choisissez « Ouvrir un flux réseau ».',
+          'Collez le lien M3U.',
+          'Lancez la lecture.',
+          'Sélectionnez la chaîne souhaitée dans la liste.'
+        ]
+      }
+    ];
+
+    const servicesGrid = document.getElementById('servicesGrid');
+    const categoryGrid = document.getElementById('categoryGrid');
+    const methodGrid = document.getElementById('methodGrid');
+    const copyButton = document.getElementById('copyButton');
+    const playlistLink = document.getElementById('playlistLink');
+    const stats = document.querySelectorAll('.stat-number');
+    const currentYear = document.getElementById('currentYear');
+
+    function renderList(container, list, type) {
+      list.forEach(item => {
+        const card = document.createElement('div');
+        card.className = type === 'method' ? 'method-card' : type === 'category' ? 'category-card' : 'feature-card';
+        if(type === 'category'){
+          card.innerHTML = `<div class="cat-icon">${item.title.charAt(0)}</div><div><h3>${item.title}</h3></div>`;
+        } else {
+          card.innerHTML = `<h3>${item.title}</h3>`;
+        }
+        if (type === 'method') {
+          const device = document.createElement('p');
+          device.style.marginTop = '-0.4rem';
+          device.style.color = 'var(--accent)';
+          device.style.fontWeight = '700';
+          device.style.fontSize = '0.95rem';
+          device.textContent = item.device;
+          card.appendChild(device);
+          const steps = document.createElement('div');
+          steps.className = 'steps';
+          item.steps.forEach((step, index) => {
+            const stepBlock = document.createElement('div');
+            stepBlock.className = 'step-block';
+            stepBlock.innerHTML = `<span>${index + 1}</span><strong>${step}</strong>`;
+            steps.appendChild(stepBlock);
+          });
+          card.appendChild(steps);
+          const linkTag = document.createElement('p');
+          linkTag.textContent = playlistLink.value;
+          linkTag.style.marginTop = '1rem';
+          linkTag.style.color = 'var(--muted)';
+          linkTag.style.fontFamily = 'ui-monospace, SFMono-Regular, monospace';
+          card.appendChild(linkTag);
+        } else {
+          const text = document.createElement('p');
+          text.textContent = item.description;
+          card.appendChild(text);
+        }
+        container.appendChild(card);
+      });
+    }
+
+    function animateNumbers() {
+      stats.forEach(element => {
+        const target = parseInt(element.dataset.target, 10);
+        let count = 0;
+        const step = Math.max(1, Math.floor(target / 60));
+        const interval = setInterval(() => {
+          count += step;
+          if (count >= target) {
+            element.textContent = `${target}${target === 24 ? '+' : ''}`;
+            clearInterval(interval);
+          } else {
+            element.textContent = count.toLocaleString();
+          }
+        }, 15);
+      });
+    }
+
+    copyButton.addEventListener('click', () => {
+      navigator.clipboard.writeText(playlistLink.value).then(() => {
+        const previousText = copyButton.textContent;
+        copyButton.textContent = 'Lien copié';
+        setTimeout(() => { copyButton.textContent = previousText; }, 1600);
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderList(servicesGrid, services, 'feature');
+      renderList(categoryGrid, categories, 'category');
+      renderList(methodGrid, methods, 'method');
+      animateNumbers();
+      currentYear.textContent = new Date().getFullYear();
+    });
+    // Mobile nav toggle
+    (function(){
+      const btn = document.getElementById('navToggle');
+      const nav = document.getElementById('siteNav');
+      function onResize(){
+        if(window.innerWidth <= 720){
+          btn.style.display = 'inline-block';
+          nav.style.display = 'none';
+        } else {
+          btn.style.display = 'none';
+          nav.style.display = 'flex';
+        }
+      }
+      btn.addEventListener('click', ()=>{
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        nav.style.display = expanded ? 'none' : 'flex';
+      });
+      window.addEventListener('resize', onResize);
+      onResize();
+    })();
+
+    // Simple reveal animations for sections
+    (function(){
+      const obs = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.classList.add('reveal-visible');
+            obs.unobserve(e.target);
+          }
+        });
+      },{threshold:0.12});
+      document.querySelectorAll('section, .feature-card, .method-card, .contact-card').forEach(el=>{
+        el.classList.add('reveal'); obs.observe(el);
+      });
+    })();
+    // Testimonials data + render
+    (function(){
+      const testimonials = [
+        {author:'Jean R.', text:'Installation rapide, playlist stable — 5 étoiles !'},
+        {author:'Miora T.', text:'Support local excellent, toujours disponible.'},
+        {author:'Andry S.', text:'Fonctionne très bien sur TiviMate et Android TV.'}
+      ];
+      const dest = document.getElementById('testimonialsGrid');
+      testimonials.forEach(t=>{
+        const card = document.createElement('div'); card.className='testimonial-card';
+        card.innerHTML = `<p class="testimonial-text">${t.text}</p><div class="testimonial-author">${t.author}</div>`;
+        dest.appendChild(card);
+      });
+    })();
+
+    // Viral sharing + counters
+    (function(){
+      const shareKey = 'krukov_share_count';
+      function getCount(){return parseInt(localStorage.getItem(shareKey)||'0',10)}
+      function setCount(n){localStorage.setItem(shareKey,String(n));updateCountUI();}
+      function updateCountUI(){document.querySelectorAll('.share-count').forEach(el=>el.textContent=getCount());}
+      function openShare(url){window.open(url,'_blank'); setCount(getCount()+1)}
+      // insert sticky CTA
+      const sticky = document.createElement('div'); sticky.id='stickyCTA';
+      sticky.innerHTML = `<button id="cta-play">Obtenir la playlist</button><button id="cta-share">Partager</button><div class="count">Partages: <span class="share-count">0</span></div>`;
+      document.body.appendChild(sticky);
+      document.getElementById('cta-play').addEventListener('click', ()=>{document.getElementById('playlistLink').select(); navigator.clipboard.writeText(document.getElementById('playlistLink').value); alert('Lien copié — collez dans votre app IPTV');});
+      document.getElementById('cta-share').addEventListener('click', ()=>{
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent('Découvrez Krukov Tek IPTV professionnel — playlist M3U');
+        // give options via prompt
+        const choice = prompt('Choisir: 1) WhatsApp 2) Facebook 3) Telegram (tape 1/2/3)');
+        if(choice==='1') openShare(`https://wa.me/?text=${text}%20${url}`);
+        else if(choice==='2') openShare(`https://www.facebook.com/sharer/sharer.php?u=${url}`);
+        else if(choice==='3') openShare(`https://t.me/share/url?url=${url}&text=${text}`);
+      });
+      updateCountUI();
+    })();
+
+    // Simple subscribe (mock)
+    (function(){
+      const subForm = document.createElement('div');
+      subForm.style.position='fixed'; subForm.style.right='18px'; subForm.style.bottom='18px'; subForm.style.zIndex='65';
+      subForm.innerHTML = `<form id="microSubscribe" style="display:flex;gap:.4rem;background:linear-gradient(180deg,#fff,var(--surface-2));padding:.6rem;border-radius:999px;border:1px solid var(--border);align-items:center"><input id="microEmail" placeholder="Votre email" style="border:0;padding:.45rem .6rem;border-radius:999px;outline:none;width:160px" type="email" required><button style="background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;border:none;padding:.45rem .7rem;border-radius:999px;cursor:pointer">S'inscrire</button></form>`;
+      document.body.appendChild(subForm);
+      document.getElementById('microSubscribe').addEventListener('submit', (e)=>{e.preventDefault(); const em=document.getElementById('microEmail').value; alert('Merci ! Email enregistré (simulation): '+em); document.getElementById('microEmail').value='';});
+    })();
+  </script>
+  <style>
+    /* runtime responsive helpers and reveal animation */
+    .site-nav{display:flex;gap:1.25rem;align-items:center}
+    @media(max-width:720px){
+      #navToggle{display:inline-block}
+      .site-nav{flex-direction:column;align-items:flex-start;padding:1rem 0;width:100%;}
+      .site-nav a{padding:.5rem 0;color:var(--text);}
+      .hero-grid{grid-template-columns:1fr;}
+    }
+    .reveal{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+    .reveal-visible{opacity:1;transform:none}
+    .feature-card, .method-card, .contact-card{will-change:transform}
+  </style>
+</body>
+</html>
