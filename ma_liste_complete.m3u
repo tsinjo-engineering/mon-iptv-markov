@@ -1,0 +1,134 @@
+#EXTM3U x-tvg-url="https://iptv-org.github.io/epg/guides/fr.xml"
+
+#EXTINF:-1 tvg-name="Al Jazeera English" tvg-logo="https://iptv-org.github.io/iptv/logos/AlJazeeraEnglish.png" group-title="NEWS",Al Jazeera English
+https://live-hls-web-aje.getaj.net/AJE/01.m3u8
+
+#EXTINF:-1 tvg-name="France 24 FR" tvg-logo="https://iptv-org.github.io/iptv/logos/France24.png" group-title="NEWS",France 24 FR
+https://stream.france24.com/hls/live/2037967/F24_FR_LO_HLS/master.m3u8
+
+#EXTINF:-1 tvg-name="France 24 EN" tvg-logo="https://iptv-org.github.io/iptv/logos/France24.png" group-title="NEWS",France 24 EN
+https://stream.france24.com/hls/live/2037965/F24_EN_LO_HLS/master.m3u8
+
+#EXTINF:-1 tvg-name="France 24 AR" group-title="NEWS",France 24 AR
+https://stream.france24.com/hls/live/2037968/F24_AR_LO_HLS/master.m3u8
+
+#EXTINF:-1 tvg-name="DW English" group-title="NEWS",DW English
+https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/index.m3u8
+
+#EXTINF:-1 tvg-name="DW Arabic" group-title="NEWS",DW Arabic
+https://dwamdstream104.akamaized.net/hls/live/2015530/dwstream104/index.m3u8
+
+#EXTINF:-1 tvg-name="DW Espanol" group-title="NEWS",DW Espanol
+https://dwamdstream103.akamaized.net/hls/live/2015527/dwstream103/index.m3u8
+
+#EXTINF:-1 tvg-name="CGTN English" group-title="NEWS",CGTN English
+https://news.cgtn.com/resource/live/english/cgtn-news.m3u8
+
+#EXTINF:-1 tvg-name="CGTN French" group-title="NEWS",CGTN French
+https://news.cgtn.com/resource/live/french/cgtn-french.m3u8
+
+#EXTINF:-1 tvg-name="Euronews FR" group-title="NEWS",Euronews FR
+https://euronews-euronews-frch-live.cast.addnan.com/euronews/fr/master.m3u8
+
+#EXTINF:-1 tvg-name="Euronews EN" group-title="NEWS",Euronews EN
+https://euronews-euronews-ench-live.cast.addnan.com/euronews/en/master.m3u8
+
+#EXTINF:-1 tvg-name="Euronews AR" group-title="NEWS",Euronews AR
+https://euronews-euronews-arch-live.cast.addnan.com/euronews/ar/master.m3u8
+
+#EXTINF:-1 tvg-name="TRT World" group-title="NEWS",TRT World
+https://trtworldlive.akamaized.net/hls/live/571308/trtworld/master.m3u8
+
+#EXTINF:-1 tvg-name="NHK World Japan" group-title="NEWS",NHK World Japan
+https://nhkworldlive01.akamaized.net/hls/live/2003459/nhkworld/index_3M.m3u8
+
+#EXTINF:-1 tvg-name="Bloomberg TV" group-title="NEWS",Bloomberg TV
+https://cdn-lf.bloomberg.com/HLS/live/706655-b/bloomberg/BBTV_WW_1/master.m3u8
+
+#EXTINF:-1 tvg-name="i24 NEWS EN" group-title="NEWS",i24 NEWS EN
+https://bcovlive-a.akamaihd.net/b8b8bbc0ac0442c19a4a2bdfc849adec/eu-central-1/6115230858001/playlist.m3u8
+
+#EXTINF:-1 tvg-name="TV5MONDE" tvg-logo="https://iptv-org.github.io/iptv/logos/TV5Monde.png" group-title="FRANCOPHONIE",TV5MONDE
+https://ott.tv5monde.com/hls/live/2022790/tv5monde/master.m3u8
+
+#EXTINF:-1 tvg-name="TV5MONDE Afrique" group-title="FRANCOPHONIE",TV5MONDE Afrique
+https://ott.tv5monde.com/hls/live/2022791/afrique/master.m3u8
+
+#EXTINF:-1 tvg-name="TV5MONDE Info" group-title="FRANCOPHONIE",TV5MONDE Info
+https://ott.tv5monde.com/hls/live/2022792/info/master.m3u8
+
+#EXTINF:-1 tvg-name="RFI Monde" group-title="FRANCOPHONIE",RFI Monde
+https://rfifr.akamaized.net/hls/live/2016453/rfifr/master.m3u8
+
+#EXTINF:-1 tvg-name="CFI Afrique" group-title="FRANCOPHONIE",CFI Afrique
+https://cfi-afr.akamaized.net/hls/live/2016454/cfiafr/master.m3u8
+
+#EXTINF:-1 tvg-name="NASA TV HD" tvg-logo="https://iptv-org.github.io/iptv/logos/NASATV.png" group-title="SCIENCE",NASA TV HD
+https://ntv1.akamaized.net/hls/live/2014075/NASA-NTV1-HLS/master.m3u8
+
+#EXTINF:-1 tvg-name="NASA TV Media" group-title="SCIENCE",NASA TV Media
+https://ntv2.akamaized.net/hls/live/2014076/NASA-NTV2-HLS/master.m3u8
+
+#EXTINF:-1 tvg-name="EBS Plus Korea" group-title="SCIENCE",EBS Plus Korea
+https://ebslive.akamaized.net/hls/live/2003185/ebsplus/master.m3u8
+
+#EXTINF:-1 tvg-name="RT Documentary" group-title="DOCUMENTAIRES",RT Documentary
+https://rt-doc.rttv.com/live/rtdoc/playlist.m3u8
+
+#EXTINF:-1 tvg-name="Arirang TV" group-title="ASIE",Arirang TV
+https://amdlive-ctnd02.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8
+
+#EXTINF:-1 tvg-name="KBS World" group-title="ASIE",KBS World
+https://kbsworld.akamaized.net/hls/live/2034452/kbsworld/master.m3u8
+
+#EXTINF:-1 tvg-name="NHK World Premium" group-title="ASIE",NHK World Premium
+https://nhkworldlive01.akamaized.net/hls/live/2003459/nhkworld/index_1M.m3u8
+
+#EXTINF:-1 tvg-name="[MG] Madagascar (iptv-org)" group-title="MADAGASCAR & AFRIQUE",[MG] Madagascar
+https://iptv-org.github.io/iptv/countries/mg.m3u
+
+#EXTINF:-1 tvg-name="[AFR] Afrique complete" group-title="MADAGASCAR & AFRIQUE",[AFR] Afrique complete
+https://iptv-org.github.io/iptv/regions/afr.m3u
+
+#EXTINF:-1 tvg-name="[FR] Langue Francaise" group-title="MADAGASCAR & AFRIQUE",[FR] Langue Francaise
+https://iptv-org.github.io/iptv/languages/fra.m3u
+
+#EXTINF:-1 tvg-name="[INDEX] Toutes chaines monde 8000+" group-title="== SOURCES GLOBALES ==",Toutes chaines monde
+https://iptv-org.github.io/iptv/index.m3u
+
+#EXTINF:-1 tvg-name="[INDEX] Free-TV International" group-title="== SOURCES GLOBALES ==",Free-TV International
+https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8
+
+#EXTINF:-1 tvg-name="[CAT] Actualites" group-title="== CATEGORIES ==",Actualites
+https://iptv-org.github.io/iptv/categories/news.m3u
+
+#EXTINF:-1 tvg-name="[CAT] Sport" group-title="== CATEGORIES ==",Sport
+https://iptv-org.github.io/iptv/categories/sports.m3u
+
+#EXTINF:-1 tvg-name="[CAT] Films" group-title="== CATEGORIES ==",Films
+https://iptv-org.github.io/iptv/categories/movies.m3u
+
+#EXTINF:-1 tvg-name="[CAT] Series" group-title="== CATEGORIES ==",Series
+https://iptv-org.github.io/iptv/categories/series.m3u
+
+#EXTINF:-1 tvg-name="[CAT] Divertissement" group-title="== CATEGORIES ==",Divertissement
+https://iptv-org.github.io/iptv/categories/entertainment.m3u
+
+#EXTINF:-1 tvg-name="[CAT] Musique" group-title="== CATEGORIES ==",Musique
+https://iptv-org.github.io/iptv/categories/music.m3u
+
+#EXTINF:-1 tvg-name="[CAT] Enfants" group-title="== CATEGORIES ==",Enfants
+https://iptv-org.github.io/iptv/categories/kids.m3u
+
+#EXTINF:-1 tvg-name="[CAT] Documentaires" group-title="== CATEGORIES ==",Documentaires
+https://iptv-org.github.io/iptv/categories/documentary.m3u
+
+#EXTINF:-1 tvg-name="[CAT] Education" group-title="== CATEGORIES ==",Education
+https://iptv-org.github.io/iptv/categories/education.m3u
+
+#EXTINF:-1 tvg-name="[CAT] Lifestyle" group-title="== CATEGORIES ==",Lifestyle
+https://iptv-org.github.io/iptv/categories/lifestyle.m3u
+
+#EXTINF:-1 tvg-name="[CAT] Religion" group-title="== CATEGORIES ==",Religion
+https://iptv-org.github.io/iptv/categories/religious.m3u
+
